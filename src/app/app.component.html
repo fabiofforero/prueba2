@@ -1,0 +1,37 @@
+<h1>{{ title }}</h1>
+
+<button (click)="cargarDataCategorias()">Cargar Data Categorias</button>
+
+<div *ngIf="listCategorias.length > 0">
+  <h2>Lista de Videos</h2>
+  <ul>
+    <li *ngFor="let list1 of listCategorias">
+      <strong>Nombre:</strong> {{ list1.name }}<br>
+      <strong>Descripción:</strong> {{ list1.description }}<br>
+      <!-- Agrega más campos según tu estructura de datos -->
+    </li>
+  </ul>
+</div>
+
+<h1>{{ title }}</h1>
+
+<button (click)="cargarDataEventos()">Cargar Data Eventos</button>
+
+<div>
+  <!--<iframe [src]="externalUrl" frameborder="0" width="100%" height="500"></iframe>-->
+</div>
+
+
+<div *ngIf="listEventos.length > 0">
+  <h2>Lista de Videos</h2>
+  <ul>
+    <li *ngFor="let list2 of listEventos">
+      <strong>Nombre:</strong> {{ list2.name }}<br>
+      <strong>Descripción:</strong><br>
+      <div [innerHTML]="list2.description">
+
+      </div>
+      <!-- Agrega más campos según tu estructura de datos -->
+    </li>
+  </ul>
+</div>
